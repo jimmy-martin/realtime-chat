@@ -2064,13 +2064,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
-var nickname = document.querySelector('#nickname').value;
-var message = document.querySelector('#message').value;
+var nickname = document.querySelector('#nickname');
+var message = document.querySelector('#message');
 var submitButton = document.querySelector('#submitButton');
 submitButton.addEventListener('click', function () {
   axios.post('/chat', {
-    nickname: nickname,
-    message: message
+    nickname: nickname.value,
+    message: message.value
   });
 });
 
