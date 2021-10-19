@@ -14,13 +14,6 @@
 <!-- This is an example component -->
 <div class="flex flex-col h-screen w-screen bg-white">
     <div id="chat"  class="flex flex-col mt-2 flex-col-reverse overflow-y-scroll	 space-y-3 mb-20 pb-3 ">
-        <div class="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-        </div>
-{{--        exemple pour afficher à droite de m'écran le message envoyé par l'utilisateur de l'application--}}
-{{--        <div class="w-max ml-auto break-all mt-2 mb-1 p-2 rounded-br-none bg-blue-500 rounded-2xl text-white text-left mr-5">--}}
-{{--            But numbers can--}}
-{{--        </div>--}}
     </div>
     <div class="flex flex-row  items-center  bottom-0 my-2 w-full">
         <div

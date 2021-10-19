@@ -2076,7 +2076,12 @@ submitButton.addEventListener('click', function () {
 });
 window.Echo.channel('chat').listen('.chat-message', function (event) {
   console.log(event);
-  chatElement.innerHTML += "<div class=\"other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2\">\n            ".concat(event.message, " de <em>").concat(event.nickname, "</em>\n        </div>");
+
+  if (event.nickname === nickname.value) {
+    chatElement.innerHTML += "<div class=\"w-max ml-auto break-all mt-2 mb-1 p-2 rounded-br-none bg-blue-500 rounded-2xl text-white text-l\">\n            ".concat(event.message, " de <em>").concat(event.nickname, "</em>\n        </div>");
+  } else {
+    chatElement.innerHTML += "<div class=\"other break-all mt-2 ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2\">\n            ".concat(event.message, " de <em>").concat(event.nickname, "</em>\n        </div>");
+  }
 });
 
 /***/ }),
