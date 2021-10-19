@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ChatMessageEvent;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -34,7 +35,14 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        event(new ChatMessageEvent(
+            $request->nickname,
+            $request->message
+        ));
+
+        return response()->json([
+            'success' => 'Chat message sent.'
+        ]);
     }
 
     /**
