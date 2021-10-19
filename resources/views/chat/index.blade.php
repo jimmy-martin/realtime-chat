@@ -92,7 +92,7 @@
         </div>
         <div>
             <button
-                id="self"
+                id="submitButton"
                 class="flex items-center justify-center h-10 w-10 mr-2 rounded-full bg-gray-200 hover:bg-gray-300 text-indigo-800 text-white focus:outline-none"
             >
                 <svg
