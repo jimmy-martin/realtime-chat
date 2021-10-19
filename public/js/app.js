@@ -2067,11 +2067,16 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var nickname = document.querySelector('#nickname');
 var message = document.querySelector('#message');
 var submitButton = document.querySelector('#submitButton');
+var chatElement = document.querySelector('#chat');
 submitButton.addEventListener('click', function () {
   axios.post('/chat', {
     nickname: nickname.value,
     message: message.value
   });
+});
+window.Echo.channel('chat').listen('.chat-message', function (event) {
+  console.log(event);
+  chatElement.innerHTML += "<div class=\"other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2\">\n            ".concat(event.message, " de <em>").concat(event.nickname, "</em>\n        </div>");
 });
 
 /***/ }),
